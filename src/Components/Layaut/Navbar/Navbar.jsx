@@ -12,19 +12,20 @@ const Navbar = () => {
 
     return (
         <div>
-        <h2>Este es el navbar</h2>
+            <div>
+                <Link to="/favs"><button>ir aFavoritos</button></Link>
+                <Link to="/dentist"><button>Lista de dentistas</button></Link>
+                <Link to="/contact"><button>Contactanos</button></Link>
+            </div>
+            <Switch
+                checked={state.isDark}
+                onChange={handleChange}
+                inputProps={{ "aria-label": "controlled" }}
+            />
 
-        <Switch
-            checked={state.isDark}
-            onChange={handleChange}
-            inputProps={{ "aria-label": "controlled" }}
-        />
-
-        <Link to="/favs">Ir a favoritos</Link>
-
-        <div style={{ minHeight: "80vh" }}>
-            <Outlet />
-        </div>
+            <div style={{ minHeight: "80vh" }}>
+                <Outlet />
+            </div>
         </div>
     );
 };
